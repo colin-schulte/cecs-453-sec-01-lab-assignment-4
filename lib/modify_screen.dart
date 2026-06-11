@@ -152,7 +152,7 @@ class _ModifyScreenState extends State<ModifyScreen> {
 
                 widget.mortgage.setYears(_selectedYears);
 
-                widget.mortgage.setRate(_selectedRate / 100);
+                widget.mortgage.setRate(_selectedRate);
 
                 Navigator.pop(context);
               },
