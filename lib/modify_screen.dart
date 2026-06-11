@@ -16,7 +16,10 @@ class _ModifyScreenState extends State<ModifyScreen> {
   int _selectedYears = 30;
   double _selectedRate = 3.5;
 
-  final List<double> rates = List.generate(53, (index) => 2.0 + (index * 0.25));
+  final List<double> rates = List.generate(
+    53,
+    (index) => (2.0 + (index * 0.25)) / 100,
+  );
 
   @override
   void initState() {
@@ -27,7 +30,7 @@ class _ModifyScreenState extends State<ModifyScreen> {
     );
 
     _selectedYears = widget.mortgage.years;
-    _selectedRate = widget.mortgage.rate * 100;
+    _selectedRate = widget.mortgage.rate;
   }
 
   @override
@@ -131,7 +134,7 @@ class _ModifyScreenState extends State<ModifyScreen> {
 
                   return ListTile(
                     selected: rate == _selectedRate,
-                    title: Text("${rate.toStringAsFixed(2)}%"),
+                    title: Text("${(rate * 100).toStringAsFixed(2)}%"),
                     onTap: () {
                       setState(() {
                         _selectedRate = rate;
