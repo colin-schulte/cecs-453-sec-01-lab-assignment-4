@@ -7,6 +7,24 @@ class Mortgage {
 
   Mortgage({this.amount = 100000, this.years = 30, this.rate = 0.035});
 
+  void setAmount(double newAmount) {
+    if (newAmount >= 0) {
+      amount = newAmount;
+    }
+  }
+
+  void setYears(int newYears) {
+    if (newYears >= 0) {
+      years = newYears;
+    }
+  }
+
+  void setRate(double newRate) {
+    if (newRate >= 0) {
+      rate = newRate;
+    }
+  }
+
   double monthlyPayment() {
     double mRate = rate / 12;
 
