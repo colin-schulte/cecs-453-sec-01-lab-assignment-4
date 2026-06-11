@@ -18,4 +18,16 @@ class Mortgage {
   double totalPayment() {
     return monthlyPayment() * years * 12;
   }
+
+  String formattedAmount() {
+    return "\$${amount.toStringAsFixed(2)}";
+  }
+
+  String formattedMonthlyPayment() {
+    return "\$${monthlyPayment().toStringAsFixed(2)}";
+  }
+
+  String formattedTotalPayment() {
+    return "\$${totalPayment().toStringAsFixed(2)}";
+  }
 }
